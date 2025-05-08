@@ -13,15 +13,15 @@
 # Modify Default Hostname
 sed -i 's/ImmortalWrt/NekoHome/g' package/base-files/files/bin/config_generate
 
+# Modify Default IP Address
+sed -i 's/192.168.6.1/192.168.1.1/g' package/base-files/files/bin/config_generate
+
 # Modify Default Timezone 
 sed -i 's/UTC/Asia\/Shanghai/g' package/base-files/files/bin/config_generate
 
 # Modify Default mtwifi-cfg WiFi SSID
-sed -i 's/ImmortalWrt-2.4G/NekoHome/g' package/mtk/applications/mtwifi-cfg/files/mtwifi.sh
-sed -i 's/ImmortalWrt-5G/NekoHome-5G/g' package/mtk/applications/mtwifi-cfg/files/mtwifi.sh
-
-# Modify Default Software Source
-sed -i 's/mirrors.vsean.net\/openwrt/mirrors.pku.edu.cn\/immortalwrt/g' package/emortal/default-settings/files/99-default-settings-chinese
+sed -i 's/ImmortalWrt-2.4G/OpenWrt_Sakura/g' package/mtk/applications/mtwifi-cfg/files/mtwifi.sh
+sed -i 's/ImmortalWrt-5G/OpenWrt_Sakura-5G/g' package/mtk/applications/mtwifi-cfg/files/mtwifi.sh
 
 # Replace Banner
 cp -f $GITHUB_WORKSPACE/banner package/base-files/files/etc/banner
@@ -31,8 +31,8 @@ sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/M
 sed -i 's/bootstrap/argon/g' ./feeds/luci/modules/luci-base/root/etc/config/luci
 
 # Modify Argon Theme Settings
-sed -i 's/#5e72e4/#fef65b/g' feeds/luci/applications/luci-app-argon-config/root/etc/config/argon
-sed -i 's/#483d8b/#fef65b/g' feeds/luci/applications/luci-app-argon-config/root/etc/config/argon
+sed -i 's/#5e72e4/#ffcc11/g' feeds/luci/applications/luci-app-argon-config/root/etc/config/argon
+sed -i 's/#483d8b/#ffcc11/g' feeds/luci/applications/luci-app-argon-config/root/etc/config/argon
 sed -i 's/bing/none/g' feeds/luci/applications/luci-app-argon-config/root/etc/config/argon
 
 # Add Customized Background Image
